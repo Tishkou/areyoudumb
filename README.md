@@ -1,5 +1,8 @@
 # areyoudumb
 
-just open *main.py* from extracted zip file and see if you are dumb :)
+1. download zip file 
+2. extract zip file
+3. run *main.exe* or *main.py (requires python and pygame)*
+4. see if you are dumb :)
 
-\*requires python and pygame
+thanks @ZekoSNB for idea
