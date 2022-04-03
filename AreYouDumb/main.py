@@ -59,8 +59,8 @@ class Button:
         SCREEN.blit(self.text_surf, self.text_rect)
 
     def reposition(self):
-        self.center = (random.choice(range(int(W/2), int(W - self.size/2))), random.choice(range(int(H/2), int(H - self.size/2))))
-
+        self.center = (random.choice(range(int(W/2), int(W - self.size/2))), 
+            random.choice(range(int(H/2), int(H - self.size/2))))
 
 button_yes = Button((W/4, H/2), "Yes")
 button_no = Button((W/4*3, H/2), "No")
@@ -73,18 +73,20 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    dumb = False
+                    button_no.center = (W/4*3, H/2)
             if button_no.rect.collidepoint(MOUSE):
                 button_no.reposition()
             if pygame.mouse.get_pressed()[0]:
                 if button_yes.rect.collidepoint(MOUSE):
                     dumb = True
 
+        MOUSE = pygame.mouse.get_pos()
 
         SCREEN.fill(colors["gray"])
         SCREEN.blit(text_surf, text_rect)
-
-        MOUSE = pygame.mouse.get_pos()
-
         button_yes.draw()
         button_no.draw() 
 
@@ -92,8 +94,6 @@ def main():
             SCREEN.fill(colors["gray"])
             SCREEN.blit(finaltext_surf, finaltext_rect)
 
-
         CLOCK.tick(FPS)
         pygame.display.update()
-
 main()
