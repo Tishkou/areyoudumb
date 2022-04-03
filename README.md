@@ -5,4 +5,4 @@
 3. run *main.exe* or *main.py (requires python and pygame)*
 4. see if you are dumb :)
 
-thanks @ZekoSNB for idea
+thanks [@ZekoSNB](https://github.com/ZekoSNB) for idea
