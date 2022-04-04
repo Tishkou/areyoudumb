@@ -74,7 +74,7 @@ def main():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_SPACE and dumb:
                     dumb = False
                     button_no.center = (W/4*3, H/2)
             if button_no.rect.collidepoint(MOUSE):
